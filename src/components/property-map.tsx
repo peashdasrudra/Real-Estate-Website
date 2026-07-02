@@ -42,6 +42,7 @@ export function PropertyMap({ properties }: { properties: Property[] }) {
           <Marker key={p.id} position={[p.latitude, p.longitude]} icon={goldIcon}>
             <Popup>
               <div style={{ width: 220, fontFamily: 'Inter, sans-serif' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.images[0]} alt={p.title} style={{ width: '100%', height: 100, objectFit: 'cover', borderRadius: 8 }} />
                 <h3 style={{ margin: '8px 0 4px', fontSize: 14, fontWeight: 600, color: '#0B2545' }}>{p.title}</h3>
                 <p style={{ margin: 0, fontSize: 12, color: '#666' }}>{p.area_name}, {p.city}</p>
