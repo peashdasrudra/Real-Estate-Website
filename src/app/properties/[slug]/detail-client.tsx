@@ -17,7 +17,11 @@ import type { Property } from '@/lib/properties';
 import { PropertyCard } from '@/components/property-card';
 import { SITE } from '@/lib/site';
 import { toast } from 'sonner';
-import { PropertyMap } from '@/components/property-map';
+import dynamic from 'next/dynamic';
+
+const PropertyMap = dynamic(() => import('@/components/property-map').then((mod) => mod.PropertyMap), {
+  ssr: false,
+});
 
 export function PropertyDetailClient({ property, related }: { property: Property; related: Property[] }) {
   const [activeImg, setActiveImg] = useState(0);

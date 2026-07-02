@@ -1,4 +1,5 @@
-import type { Metadata } from 'next';
+'use client';
+
 import { PageHeader } from '@/components/page-header';
 import { Container } from '@/components/ui/layout';
 import { FadeUp, StaggerContainer, StaggerItem } from '@/components/ui/motion';
@@ -6,11 +7,6 @@ import { Input, Textarea, Select, Label } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import { Briefcase, MapPin, Clock, Heart, GraduationCap, Plane } from 'lucide-react';
 import { toast } from 'sonner';
-
-export const metadata: Metadata = {
-  title: 'Careers — Join Golden Heights',
-  description: 'Build a career at one of Bangladesh\'s most respected luxury real estate companies.',
-};
 
 const positions = [
   { title: 'Senior Property Consultant', dept: 'Sales · Dhaka', type: 'Full-time' },

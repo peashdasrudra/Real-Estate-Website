@@ -1,15 +1,11 @@
-import type { Metadata } from 'next';
+'use client';
+
 import { PageHeader } from '@/components/page-header';
 import { Container } from '@/components/ui/layout';
 import { Input, Textarea, Select, Label } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import { Calendar, Check, MapPin, Car, Phone } from 'lucide-react';
 import { toast } from 'sonner';
-
-export const metadata: Metadata = {
-  title: 'Book a Site Visit',
-  description: 'Schedule a free, chauffeured site visit to any of our properties. Pick a date, pick a time, and we will take care of the rest.',
-};
 
 export default function BookVisitPage() {
   return (

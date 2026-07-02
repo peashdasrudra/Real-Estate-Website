@@ -1,19 +1,20 @@
-import { HTMLAttributes } from 'react';
+import { InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes, LabelHTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 
-export function Input({ className, ...props }: HTMLAttributes<HTMLInputElement> & { type?: string }) {
+export function Input({ className, type = 'text', ...props }: InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input
+      type={type}
       className={cn(
         'h-12 w-full rounded-xl border border-primary-900/15 bg-white px-4 text-sm text-primary-900 placeholder:text-primary-900/40 transition-all duration-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none disabled:opacity-50',
         className
       )}
-      {...(props as any)}
+      {...props}
     />
   );
 }
 
-export function Textarea({ className, ...props }: HTMLAttributes<HTMLTextAreaElement>) {
+export function Textarea({ className, ...props }: TextareaHTMLAttributes<HTMLTextAreaElement>) {
   return (
     <textarea
       className={cn(
@@ -25,7 +26,7 @@ export function Textarea({ className, ...props }: HTMLAttributes<HTMLTextAreaEle
   );
 }
 
-export function Select({ className, children, ...props }: HTMLAttributes<HTMLSelectElement>) {
+export function Select({ className, children, ...props }: SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <select
       className={cn(
@@ -39,14 +40,14 @@ export function Select({ className, children, ...props }: HTMLAttributes<HTMLSel
         backgroundPosition: 'right 12px center',
         backgroundSize: '16px',
       }}
-      {...(props as any)}
+      {...props}
     >
       {children}
     </select>
   );
 }
 
-export function Label({ className, ...props }: HTMLAttributes<HTMLLabelElement>) {
+export function Label({ className, ...props }: LabelHTMLAttributes<HTMLLabelElement>) {
   return (
     <label
       className={cn('text-sm font-medium text-primary-900/80 mb-1.5 block', className)}

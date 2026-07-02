@@ -10,7 +10,11 @@ import { Button } from '@/components/ui/button';
 import { Input, Select, Label } from '@/components/ui/form';
 import { AREAS, PROPERTY_TYPES, STATUS } from '@/lib/site';
 import { AMENITIES } from '@/lib/site';
-import { PropertyMap } from '@/components/property-map';
+import dynamic from 'next/dynamic';
+
+const PropertyMap = dynamic(() => import('@/components/property-map').then((mod) => mod.PropertyMap), {
+  ssr: false,
+});
 import type { Property } from '@/lib/properties';
 import { cn } from '@/lib/utils';
 

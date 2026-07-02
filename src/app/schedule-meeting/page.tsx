@@ -1,15 +1,11 @@
-import type { Metadata } from 'next';
+'use client';
+
 import { PageHeader } from '@/components/page-header';
 import { Container } from '@/components/ui/layout';
 import { Input, Textarea, Select, Label } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import { AGENTS } from '@/lib/agents';
 import { toast } from 'sonner';
-
-export const metadata: Metadata = {
-  title: 'Schedule a Meeting',
-  description: 'Book a virtual or in-person meeting with a senior property consultant at a time that suits you.',
-};
 
 export default function ScheduleMeetingPage() {
   return (

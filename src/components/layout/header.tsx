@@ -12,6 +12,11 @@ import { cn } from '@/lib/utils';
 
 export function Header() {
   const pathname = usePathname();
+  const primaryNav = NAV.primary as readonly {
+    label: string;
+    href: string;
+    children?: readonly { label: string; href: string }[];
+  }[];
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -69,7 +74,7 @@ export function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">
-            {NAV.primary.map((item) => {
+            {primaryNav.map((item) => {
               const active = pathname === item.href || pathname.startsWith(item.href + '/');
               return (
                 <div
@@ -170,7 +175,7 @@ export function Header() {
           >
             <Container className="pb-12">
               <div className="space-y-1">
-                {NAV.primary.map((item, i) => (
+                {primaryNav.map((item, i) => (
                   <motion.div
                     key={item.label}
                     initial={{ opacity: 0, x: -20 }}
