@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <rect x="8" y="14" width="32" height="32" rx="8" fill="#0B2545"/>
+  <path d="M14 38V22l10-6 10 6v16" stroke="#D4AF37" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <path d="M20 38v-8h8v8" stroke="#D4AF37" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <text x="52" y="32" font-family="Manrope, sans-serif" font-size="18" font-weight="700" fill="#0B2545">Golden Heights</text>
+  <text x="52" y="48" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#0B2545" letter-spacing="2">PROPERTIES</text>
+</svg>
