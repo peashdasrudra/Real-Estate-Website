@@ -69,7 +69,7 @@ function HeroSection() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-[100svh] min-h-[700px] flex items-center overflow-hidden bg-primary-950">
+    <section ref={ref} className="relative h-[100svh] min-h-[700px] flex items-center pt-24 lg:pt-28 overflow-hidden bg-primary-950">
       {/* Background image with parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 -top-[50px]">
         <Image
@@ -141,23 +141,6 @@ function HeroSection() {
                 <Play className="h-4 w-4" /> Book Site Visit
               </Button>
             </Link>
-          </motion.div>
-
-          {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4"
-          >
-            {STATS.map((s, i) => (
-              <div key={i}>
-                <p className="font-heading text-3xl md:text-4xl font-bold text-white tabular-nums">
-                  <AnimatedCounter end={s.value} suffix={s.suffix} />
-                </p>
-                <p className="text-xs uppercase tracking-wider text-white/40 mt-1">{s.label}</p>
-              </div>
-            ))}
           </motion.div>
         </motion.div>
       </Container>
